@@ -15,7 +15,7 @@ class App extends StatelessWidget {
       title: 'Todo App',
       theme: ThemeData(
         primarySwatch: Colors.blue,
-        appBarTheme: AppBarTheme(backgroundColor: Colors.green),
+        appBarTheme: AppBarTheme(backgroundColor: Colors.brown[400]),
       ),
       home: HomePage(),
     );

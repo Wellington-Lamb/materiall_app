@@ -7,7 +7,7 @@ class HomePage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        title: Text("Meu app"),
+        title: Text("Material App"),
         titleTextStyle: const TextStyle(
           color: Colors.white,
           fontSize: 20,
@@ -31,16 +31,36 @@ class HomePage extends StatelessWidget {
             0,
           ), // Pega 100% do padding, se colocar EdgeInsets.all(1) ele fica com uma mini borda em branco
           children: [
-            // Image.asset(
-            // 'imgs/1_l3wujEgEKOecwVzf_dqVrQ.jpeg',
-            //width: double.infinity,
-            //fit: BoxFit.cover,
-            //),
             DrawerHeader(
-              decoration: BoxDecoration(color: Colors.green),
-              child: Center(child: (Text("Seja Bem-Vindo ao APP"))),
+              padding: EdgeInsets.zero,
+              decoration: BoxDecoration(
+                image: DecorationImage(
+                  image: AssetImage("imgs/empresa.png"),
+                  fit: BoxFit.cover,
+                ),
+              ),
+              child: ListView(
+                children: [
+                  UserAccountsDrawerHeader(
+                    decoration: BoxDecoration(
+                      color: Colors.transparent,
+                    ), // Deixa o fundo transparente para pegar a imagem coloada atrás
+                    accountName: Text("Wellington Lamb"),
+                    accountEmail: Text("tonlamb17@gmail.com"),
+                    currentAccountPicture: CircleAvatar(
+                      foregroundImage: AssetImage("imgs/wellington.jpg"),
+                    ),
+                  ),
+                ],
+              ),
             ),
-            ListTile(leading: Icon(Icons.home), title: Text("Home")),
+            ListTile(leading: Icon(Icons.home), title: Text("Inicio")),
+            ListTile(leading: Icon(Icons.person), title: Text("Perfil")),
+            ListTile(
+              leading: Icon(Icons.settings),
+              title: Text("Configurações"),
+            ),
+            ListTile(leading: Icon(Icons.exit_to_app), title: Text("Sair")),
           ],
         ),
       ),
