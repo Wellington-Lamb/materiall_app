@@ -1,4 +1,7 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -54,17 +57,40 @@ class HomePage extends StatelessWidget {
                 ],
               ),
             ),
+
+            // Opções do menu
             ListTile(leading: Icon(Icons.home), title: Text("Inicio")),
-            ListTile(leading: Icon(Icons.person), title: Text("Perfil")),
+            ListTile(
+              leading: Icon(Icons.person),
+              title: Text("Perfil"),
+              onTap: () {
+                Navigator.pushNamed(context, '/profile');
+              },
+            ),
             ListTile(
               leading: Icon(Icons.settings),
               title: Text("Configurações"),
             ),
-            ListTile(leading: Icon(Icons.exit_to_app), title: Text("Sair")),
+            ListTile(
+              leading: Icon(Icons.exit_to_app),
+              title: Text("Sair"),
+              onTap: () => _exitApp(),
+            ),
           ],
         ),
       ),
       body: Center(child: Text("Olá Mundo")),
     );
+  }
+
+  // Função para sair do app e verificando se é Android ou iOS.
+  // Como ela vai ser usada somente aqui então não vai ser criado
+  // um arquivo onde ela vai ser incluida.
+  void _exitApp() {
+    if (Platform.isAndroid) {
+      SystemNavigator.pop(); // Sai do app no Android
+    } else if (Platform.isIOS) {
+      exit(0); // Sai do app no iOS
+    }
   }
 }

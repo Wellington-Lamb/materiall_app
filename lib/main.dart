@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:meu_primeiro_app/home_page.dart';
+import 'package:meu_primeiro_app/profile_page.dart';
 
 void main() {
   runApp(const App());
@@ -18,6 +19,10 @@ class App extends StatelessWidget {
         appBarTheme: AppBarTheme(backgroundColor: Colors.brown[400]),
       ),
       home: HomePage(),
+      routes: {
+        '/home': (context) => HomePage(),
+        '/profile': (context) => ProfilePage(),
+      },
     );
   }
 }
