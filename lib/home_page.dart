@@ -59,9 +59,17 @@ class HomePage extends StatelessWidget {
             ),
 
             // Opções do menu
-            ListTile(leading: Icon(Icons.home), title: Text("Inicio")),
+            ListTile(
+              leading: Icon(Icons.home),
+              title: Text("Inicio"),
+              trailing: const Icon(Icons.arrow_forward_ios, size: 16.0),
+              onTap: () {
+                Navigator.pushNamed(context, '/home');
+              },
+            ),
             ListTile(
               leading: Icon(Icons.person),
+              trailing: const Icon(Icons.arrow_forward_ios, size: 16.0),
               title: Text("Perfil"),
               onTap: () {
                 Navigator.pushNamed(context, '/profile');
@@ -69,10 +77,15 @@ class HomePage extends StatelessWidget {
             ),
             ListTile(
               leading: Icon(Icons.settings),
+              trailing: const Icon(Icons.arrow_forward_ios, size: 16.0),
               title: Text("Configurações"),
+              onTap: () {
+                Navigator.pushNamed(context, '/settings');
+              },
             ),
             ListTile(
               leading: Icon(Icons.exit_to_app),
+              trailing: const Icon(Icons.arrow_forward_ios, size: 16.0),
               title: Text("Sair"),
               onTap: () => _exitApp(),
             ),

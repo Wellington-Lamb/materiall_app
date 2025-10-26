@@ -15,12 +15,8 @@ class ProfilePage extends StatelessWidget {
           fontWeight: FontWeight.w700,
         ),
       ),
-      body: Center(
-        child: Text(
-          "Página do Perfil em TESTE",
-          style: TextStyle(fontSize: 24),
-        ),
-      ),
+
+      body: Center(),
     );
   }
 }
